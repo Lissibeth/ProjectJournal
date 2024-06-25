@@ -1,0 +1,11 @@
+{% extends 'main_page/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if username %}
+        <div class="welcome-message">Вы вошли под именем {{ username }}</div>
+    {% endif %}
+    <h2>Home</h2>
+    <p>Welcome to the home page!</p>
+{% endblock %}

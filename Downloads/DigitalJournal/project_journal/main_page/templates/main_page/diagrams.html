@@ -1,0 +1,39 @@
+<!-- templates/main_page/diagrams.html -->
+{% extends "main_page/base.html" %}
+
+{% block title %}
+Diagrams
+{% endblock %}
+
+{% block content %}
+    <h2>Успеваемость студентов</h2>
+
+    <p>Большинство студентов выполнили
+        {% for completion in most_common_completions %}
+            {{ completion }}{% if not forloop.last %}, {% else %}%{% endif %}
+        {% endfor %} курса
+    </p>
+
+    <table class="student-table">
+        <thead>
+            <tr>
+                <th>Фамилии</th>
+                <th>Количество студентов</th>
+                <th>Выполнение курса (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group in grouped_students %}
+                <tr>
+                    <td>
+                        {% for student in group.students %}
+                            {{ student.last_name }} {{ student.first_name }}<br>
+                        {% endfor %}
+                    </td>
+                    <td>{{ group.count }}</td>
+                    <td>{{ group.completion_percentage }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

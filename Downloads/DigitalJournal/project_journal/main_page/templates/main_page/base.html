@@ -1,0 +1,108 @@
+<!-- main_page/templates/main_page/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Website{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-d5HOsWkgnHbl5sdpTd9CW+nafuR5f6q8wP6P3/NH+sfG+6x05mZn2QK+fjUSl+g0dVwP7BInDGXArHJYnkPSow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="{% static 'main_page/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            padding: 1rem;
+        }
+        .navbar .sidebar a {
+            margin-left: 1rem;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .navbar .auth-links {
+            margin-left: auto;
+        }
+        .navbar .auth-links a {
+            margin-left: 1rem;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .welcome-message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .student-table th, .student-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .student-table th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .student-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .student-table tr:hover {
+            background-color: #e9ecef;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .add-student-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .add-student-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="sidebar">
+            <a href="{% url 'home' %}"><i class="fas fa-home"></i> Начальная страница</a>
+            <a href="{% url 'students' %}"><i class="fas fa-book"></i> Список</a>
+            <a href="{% url 'diagrams' %}"><i class="fas fa-chart-bar"></i> Успеваемость</a>
+        </div>
+        <div class="auth-links">
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background:none;border:none;color:#007bff;font-weight:bold;cursor:pointer;padding:0;">Выйти</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Войти</a>
+                <a href="{% url 'signup' %}">Зарегистрироваться</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

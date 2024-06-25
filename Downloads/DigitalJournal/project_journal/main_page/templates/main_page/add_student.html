@@ -1,0 +1,16 @@
+<!-- main_page/templates/main_page/add_student.html -->
+
+{% extends "main_page/base.html" %}
+
+{% block title %}
+    Add Student
+{% endblock %}
+
+{% block content %}
+    <h2>Add New Student</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Student</button>
+    </form>
+{% endblock %}
