@@ -88,6 +88,7 @@
             <a href="{% url 'home' %}"><i class="fas fa-home"></i> Начальная страница</a>
             <a href="{% url 'students' %}"><i class="fas fa-book"></i> Список</a>
             <a href="{% url 'diagrams' %}"><i class="fas fa-chart-bar"></i> Успеваемость</a>
+            <li><a href="{% url 'notes_list' %}">Мои заметки</a></li>
         </div>
         <div class="auth-links">
             {% if user.is_authenticated %}

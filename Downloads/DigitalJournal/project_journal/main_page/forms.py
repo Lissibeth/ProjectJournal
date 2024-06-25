@@ -4,6 +4,7 @@ from django import forms
 from .models import Student
 from django.contrib.auth.models import User
 from .models import UserProfile
+from .models import Note
 
 class StudentForm(forms.ModelForm):
     class Meta:
@@ -37,3 +38,8 @@ class UserRegistrationForm(forms.ModelForm):
             user.save()
             UserProfile.objects.create(user=user, role=self.cleaned_data['role'])
         return user
+
+class NoteForm(forms.ModelForm):
+    class Meta:
+        model = Note
+        fields = ['title', 'content']

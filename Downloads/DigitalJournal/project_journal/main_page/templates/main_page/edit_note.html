@@ -1,0 +1,15 @@
+<!-- main_page/templates/main_page/edit_note.html -->
+{% extends "main_page/base.html" %}
+
+{% block title %}
+    Редактировать заметку
+{% endblock %}
+
+{% block content %}
+    <h2>Редактировать заметку</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}
