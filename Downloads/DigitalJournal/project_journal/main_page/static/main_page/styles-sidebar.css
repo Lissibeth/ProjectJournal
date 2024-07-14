@@ -1,36 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-}
-
-.sidebar {
+    }
+    
+    .sidebar {
     height: 100%;
-    width: 200px;
+    width: 300px;
     position: fixed;
     top: 0;
     left: 0;
     background-color: #111;
-    padding-top: 20px;
-}
-
-.sidebar a {
-    padding: 10px 15px;
+    padding-top: 10px;
+    }
+    
+    .sidebar a {
+    padding: 20px 15px;
     text-decoration: none;
     font-size: 18px;
     color: white;
     display: block;
     margin-bottom: 10px; /* Добавление отступа между элементами меню */
-}
-
-.sidebar a:hover {
-    background-color: #575757;
-}
-
-.main-content {
-    margin-left: 210px; /* Same as the width of the sidebar */
+    }
+    
+    .sidebar a:hover {
+        background-color: #575757;
+    }
+    
+    .main-content {
+    margin-left: 300px; /* Same as the width of the sidebar */
     padding: 15px;
-}
+    }
+    
+    .fa {
+    margin-right: 20px;
+    }
 
-.fa {
-    margin-right: 10px;
-}
-
+    

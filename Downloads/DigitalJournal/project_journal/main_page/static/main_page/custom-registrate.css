@@ -1,0 +1,64 @@
+/* main_page/static/main_page/custom-styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.registration-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center; /* выравнивание по центру */
+    color: #333; /* цвет текста */
+}
+
+.registration-container h2 {
+    margin-bottom: 20px;
+    color: #333; /* цвет заголовка */
+}
+
+.registration-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-container form .form-group {
+    margin-bottom: 15px;
+}
+
+.registration-container form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555; /* цвет текста лейблов */
+}
+
+.registration-container form input,
+.registration-container form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.registration-container form button {
+    padding: 10px;
+    background-color: #007bff; /* синий цвет кнопки */
+    color: #fff; /* белый текст кнопки */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.registration-container form button:hover {
+    background-color: #0056b3; /* темно-синий при наведении */
+}

@@ -1,4 +1,5 @@
 {% extends 'main_page/base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
@@ -8,4 +9,24 @@
     {% endif %}
     <h2>Home</h2>
     <p>Welcome to the home page!</p>
+    
+    <!-- Начало слайдера -->
+    <div class="slider">
+        <div class="slide fade">
+            <img src="{% static 'images/slider1.jpg' %}" alt="Slider Image 1">
+        </div>
+        <div class="slide fade">
+            <img src="{% static 'images/slider2.jpg' %}" alt="Slider Image 2">
+        </div>
+        <div class="slide fade">
+            <img src="{% static 'images/slider3.jpg' %}" alt="Slider Image 3">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <!-- Конец слайдера -->
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'main_page/slider.js' %}"></script>
 {% endblock %}
